@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Stammfunktionen zuordnen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <div class="brand-mark" aria-hidden="true">∫</div>
+      <div>
+        <p class="eyebrow">Mathematik · Analysis</p>
+        <h1>Stammfunktionen zuordnen</h1>
+      </div>
+    </header>
+
+    <section id="setup" class="panel setup-panel" aria-labelledby="setup-title">
+      <p class="eyebrow">Deine Übung</p>
+      <h2 id="setup-title">Wähle deinen Schwierigkeitsgrad</h2>
+      <p class="intro">
+        Ordne jedem Funktionsgraphen die passende Funktionsgleichung
+        zu. Zu jeder Funktion gehören mehrere Graphen.
+      </p>
+
+      <fieldset class="level-options">
+        <legend class="sr-only">Schwierigkeitsgrad wählen</legend>
+
+        <label class="level-card">
+          <input type="radio" name="level" value="easy" checked>
+          <span class="level-content">
+            <strong>Level 1 · Einstieg</strong>
+            <span>Lineare und quadratische Funktionen</span>
+          </span>
+        </label>
+
+        <label class="level-card">
+          <input type="radio" name="level" value="advanced">
+          <span class="level-content">
+            <strong>Level 2 · Kniffliger</strong>
+            <span>Polynome sowie einfache Exponential- und Sinusfunktionen</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <label class="toggle-row">
+        <input id="include-decoys" type="checkbox">
+        <span>
+          <strong>Falsche Graphen hinzufügen</strong>
+          <span class="toggle-hint">
+            Diese Graphen dürfen bei der Auswertung unzugeordnet bleiben.
+          </span>
+        </span>
+      </label>
+
+      <button id="start-button" class="button button-primary">
+        Übung starten
+      </button>
+      <p class="scope-note">
+        Es werden elementare Funktionen und ihre Stammfunktionen geübt.
+      </p>
+    </section>
+
+    <section id="activity" class="hidden" aria-labelledby="activity-title">
+      <div class="activity-heading">
+        <div>
+          <p class="eyebrow">Deine Runde</p>
+          <h2 id="activity-title">Ordne die Graphen zu</h2>
+          <p id="round-info" class="round-info"></p>
+        </div>
+        <button id="new-round-button" class="button button-secondary">
+          Neue Runde
+        </button>
+      </div>
+
+      <section class="panel instructions" aria-label="Arbeitsanweisung">
+        Wähle unter jedem Graphen die passende Funktionsgleichung aus.
+        Mehrere Graphen können zur gleichen Funktion gehören.
+      </section>
+
+      <section aria-labelledby="functions-title">
+        <div class="section-heading">
+          <h3 id="functions-title">Funktionsgleichungen</h3>
+          <span class="section-caption">Zu jeder gehören mehrere Graphen</span>
+        </div>
+        <div id="function-list" class="function-grid"></div>
+      </section>
+
+      <section aria-labelledby="graphs-title" class="graphs-section">
+        <div class="section-heading">
+          <h3 id="graphs-title">Funktionsgraphen</h3>
+          <span id="graph-count" class="section-caption"></span>
+        </div>
+        <div id="graph-list" class="graph-grid"></div>
+      </section>
+
+      <div class="actions">
+        <button id="check-button" class="button button-primary">
+          Zuordnung auswerten
+        </button>
+      </div>
+
+      <section id="results" class="panel results hidden"
+               aria-live="polite" aria-labelledby="results-title">
+        <h3 id="results-title">Auswertung</h3>
+        <p id="result-summary"></p>
+        <div id="result-details"></div>
+      </section>
+    </section>
+
+    <footer class="site-footer">
+      <span>Übung zu Stammfunktionen</span>
+      <span>Die Graphen werden direkt im Browser gezeichnet.</span>
+    </footer>
+  </main>
+</body>
+</html>
